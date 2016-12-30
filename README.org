@@ -1,0 +1,7 @@
+* 42 agenda
+Tool to automaticlly add events send by mail from the school [[https://42.fr][42]] to your ical
+agenda.
+
+The current envents supported are:
+- [ ] Conference
+- [ ] Correction and defence
