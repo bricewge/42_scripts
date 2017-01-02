@@ -5,3 +5,8 @@ agenda.
 The current envents supported are:
 - [ ] Conference
 - [ ] Correction and defence
+
+** Ressources
+- https://imapclient.readthedocs.io/
+- https://pythonhosted.org/caldav/
+- https://gigacog.com/blog/2016/01/ics-calender-file-to-caldav-with-python/
