@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 from imapclient import IMAPClient
 
 import yaml
+import email
 
 config = yaml.load(open('./config.yml', 'r'))
 
@@ -24,9 +25,15 @@ print("%d messages that aren't deleted" % len(messages))
 
 print()
 print("Messages:")
-response = server.fetch(messages, ['FLAGS', 'RFC822.SIZE', 'ENVELOPE'])
-for msgid, data in response.iteritems():
-    print('   ID %d: %d bytes, flags=%s, subject=%s' % (msgid,
-                                                        data[b'RFC822.SIZE'],
-                                                        data[b'FLAGS'],
-                                                        data['ENVELOPE'].subject))
+response = server.fetch([240], ['ENVELOPE', 'BODY[TEXT]'])
+# for msgid, data in response.iteritems():
+#     print('subject=%s,\n\n%s' % (
+#                                                         data['ENVELOPE'].subject,
+#                                                         data['BODY[TEXT]']))
+def getEmail():
+    print()
+
+def getICSFromMail(mail):
+    print(mail[240]['BODY[TEXT]'])
+
+getICSFromMail(response)
