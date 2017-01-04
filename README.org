@@ -6,6 +6,13 @@ The current envents supported are:
 - [ ] Conference
 - [ ] Correction and defence
 
+** Strucutre
+- connect to the email box via IMAP
+- get the emails which may contain an events
+- get the ics from the email
+- connect to the caldav server
+- add the event if it doesn't already exist
+
 ** Ressources
 - https://imapclient.readthedocs.io/
 - https://pythonhosted.org/caldav/
