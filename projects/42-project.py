@@ -16,22 +16,6 @@ page_size = 30
 user_id = "bwaegene"
 ft_api = None
 
-# print(programName, end=" ")
-# page = 0
-# response = ft_api.get(url + "/v2/projects/61/projects")
-# # response = ft_api.get(url + "/v2/cursus/1/projects")
-# result = json.loads(response.content)
-# projects = result
-# while len(result) == page_size:
-#     page = page + 1
-#     # response = ft_api.get(url + "/v2/cursus/1/projects?page[number]=" + str(page))
-#     response = ft_api.get(url + "/v2/cursus/61/projects?page[number]=" + str(page))
-#     result = json.loads(response.content)
-#     projects = projects + result
-
-# for item in projects:
-#     print(str (item["id"]) + "\t: " + str(item["name"]))
-
 
 def get_acces_token(client_id, client_secret, url):
     client = BackendApplicationClient(client_id=client_id)
@@ -95,7 +79,6 @@ def logged_users(users):
 def main():
     global ft_api
     ft_api = get_acces_token(client_id, client_secret, url)
-    project_name = "Rushes - Carnifex (LISP)"
     print_not_finished_projects()
     project_id = input("\033[1mEnter the ID of the project you are doing:\033[0m ")
     users = get_project_users(project_id)
