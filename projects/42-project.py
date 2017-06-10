@@ -81,8 +81,11 @@ def logged_users(users):
 def main():
     global ft_api
     ft_api = get_acces_token(client_id, client_secret, url)
-    print_not_finished_projects()
-    project_id = input("\033[1mEnter the ID of the project you are doing:\033[0m ")
+    if len(sys.argv) == 2:
+        project_id = sys.argv[1]
+    else:
+        print_not_finished_projects()
+        project_id = input("\033[1mEnter the ID of the project you are doing:\033[0m ")
     users = get_project_users(project_id)
     print("\033[1mUsers which did the project and are logged in:\033[0m")
     users = logged_users(users);
