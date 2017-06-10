@@ -7,15 +7,16 @@ import os
 from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import BackendApplicationClient
 
-config = yaml.load(open('./config.yml', 'r'))
 program_name = os.path.splitext(os.path.basename(sys.argv[0]))[0]
-client_id = config["client"]["id"]
-client_secret = config["client"]["secret"]
-url = "https://api.intra.42.fr"
+credentials = yaml.load(open('../credentials.yml', 'r'))
+client_id = credentials["client"]["id"]
+client_secret = credentials["client"]["secret"]
+url = credentials["url"]
+ft_api = None
+# Variables to customize
 page_size = 30
 campus = 1 # Paris
 user_id = "bwaegene"
-ft_api = None
 
 
 def get_acces_token(client_id, client_secret, url):

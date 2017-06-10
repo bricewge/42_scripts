@@ -1,0 +1,14 @@
+* 42-scripts
+Random scripts to be used at the school [[http://www.42.fr/][42]].
+** Credentials
+To use the sripts which use the api you need to setup your credentials as
+explained [[https://api.intra.42.fr/apidoc/guides/getting_started#create-an-application][here]] and setup your credentials in a file at the root of the repo
+named =credentials.yml=. Following is an example of such a file.
+#+NAME: credentials.yml
+#+BEGIN_SRC yaml
+client:
+  id: "4242424242424242424242424242424242424242424242424242424242424242"
+  secret: "4242424242424242424242424242424242424242424242424242424242424242"
+url: "https://api.intra.42.fr"
+#+END_SRC
+Note: This file already exist in the repo but is encrypted, so delete it first. 

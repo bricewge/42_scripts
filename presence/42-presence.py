@@ -7,12 +7,14 @@ import os
 from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import BackendApplicationClient
 
-config = yaml.load(open('./config.yml', 'r'))
 program_name = os.path.splitext(os.path.basename(sys.argv[0]))[0]
-client_id = config["client"]["id"]
-client_secret = config["client"]["secret"]
+credentials = yaml.load(open('../credentials.yml', 'r'))
+client_id = credentials["client"]["id"]
+client_secret = credentials["client"]["secret"]
+url = credentials["url"]
+# Variables to customize
+config = yaml.load(open('./config.yml', 'r'))
 users = config["users"]
-url = "https://api.intra.42.fr"
 
 
 client = BackendApplicationClient(client_id=client_id)

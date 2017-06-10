@@ -1,1 +1,2 @@
-**/config.yml filter=git-crypt diff=git-crypt
+credentials.yml filter=git-crypt diff=git-crypt
+agenda/config.yml filter=git-crypt diff=git-crypt
