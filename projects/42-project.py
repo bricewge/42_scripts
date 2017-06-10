@@ -13,6 +13,7 @@ client_id = config["client"]["id"]
 client_secret = config["client"]["secret"]
 url = "https://api.intra.42.fr"
 page_size = 30
+campus = 1 # Paris
 user_id = "bwaegene"
 ft_api = None
 
@@ -48,13 +49,14 @@ def print_not_finished_projects():
 
 
 def get_project_users(project_id):
-    '''Get the list of users which did or are doing a project'''
+    '''Get the list of users which did or are doing a project in your campus'''
     page = 0
     content = None
     users = list()
     while page == 0 or len(content) == page_size:
         response = ft_api.get(url + "/v2/projects/" + str(project_id) +
-                              "/projects_users?page[number]=" + str(page))
+                              "/projects_users?page[number]=" + str(page) +
+                              "&filter[campus]=" + str(campus))
         content = json.loads(response.content)
         for team in content:
             for user in team["teams"][0]["users"]:
