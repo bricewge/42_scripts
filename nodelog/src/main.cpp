@@ -1,37 +1,31 @@
-/*
-  Copyright (c) 2014-2015 NicoHood
-  See the readme for credit to other people.
-
-  BootKeyboard example
-
-  Shows that keyboard works even in bios.
-  Led indicats if we are in bios.
-
-  See HID Project documentation for more information.
-  https://github.com/NicoHood/HID/wiki/Keyboard-API#boot-keyboard
-*/
-
-#include <HID-Project.h>
+#include "Arduino.h"
+#include "HID-Project.h"
 
 
 void setup() {
-  // Sends a clean report to the host. This is important on any Arduino type.
-  BootKeyboard.begin();
+  Keyboard.begin();
+  Consumer.begin();
 }
 
 
 void loop() {
   // Wait for the OS to ready
   delay(1000);
-  // TODO Min screen backlight and lock session
-  // Trigger caps lock manually via button
+  // Set brightness to the minimum
+  for (int i = 0; i <= 16; i++)
+  	  Keyboard.write(KEY_F1);
+  // Lock the session
+  Keyboard.press(KEY_RIGHT_CTRL);
+  Keyboard.press(KEY_RIGHT_SHIFT);
+  Consumer.write(HID_CONSUMER_EJECT);
+  Keyboard.releaseAll();
+  // Wake up the computer regulary
   while (42) {
-    BootKeyboard.write(KEY_ENTER);
-    delay(100);
-    BootKeyboard.write(KEY_ENTER);
-    delay(100);
-    BootKeyboard.write(KEY_ESC);
-    delay(1000 * 60 * 30);
-    // delay(1000 * 7);
+	delay(1000 * 60 * 30); // 30min
+    Keyboard.write(KEY_ESC);
+    delay(500);
+    Keyboard.write(KEY_ENTER);
+    delay(500);
+    Keyboard.write(KEY_ESC);
   }
 }

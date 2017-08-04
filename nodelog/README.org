@@ -1,0 +1,6 @@
+* nodelog
+To compile and upload the firmware:
+#+BEGIN_SRC shell
+brew install platformio
+platformio run -t upload
+#+END_SRC
