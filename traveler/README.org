@@ -1,0 +1,32 @@
+#+TITLE: Traveler
+
+* Traveler
+A set of scripts to unlock the achievement ~Mighty Traveler~.
+
+** TODO Write map of the remaning stations to log into
+https://meta.intra.42.fr/clusters
+
+#+BEGIN_SRC txt
+     |  2 |    |  4 |    |  6
+--------------------------------------
+|  1 |		|  3 |    |  5 |
+
+#+END_SRC
+|    | e1 | e2/e3 |
+|----+----+-------|
+|  1 | 14 |    14 |
+|  2 | 23 |    23 |
+|  3 | 21 |    21 |
+|  4 | 23 |    23 |
+|  5 | 23 |    22 |
+|  6 | 21 |    20 |
+|  7 | 22 |    23 |
+|  8 | 21 |    21 |
+|  9 | 20 |    20 |
+| 10 | 23 |    23 |
+| 11 | 23 |    23 |
+| 12 | 23 |    23 |
+| 13 | 14 |    14 |
+
+** TODO Write script to automatically log on a station
+** TODO Write service which log yourself out when the DB had notice you are connected to the current station  
