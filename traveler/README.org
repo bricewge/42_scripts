@@ -28,5 +28,11 @@ https://meta.intra.42.fr/clusters
 | 12 | 23 |    23 |
 | 13 | 14 |    14 |
 
-** TODO Write script to automatically log on a station
+** DONE Write script to automatically log on a station
+CLOSED: [2017-10-16 Mon 15:35]
 ** TODO Write service which log yourself out when the DB had notice you are connected to the current station  
+
+Compile the firmware for the =autologin= key:
+#+BEGIN_SRC sh
+platformio run -t upload -d ./autologin
+#+END_SRC
