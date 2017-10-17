@@ -2,6 +2,7 @@
 
 * Traveler
 A set of scripts to unlock the achievement ~Mighty Traveler~.
+[[file:achivevement.svg][Mighty Traveler achievement]]
 
 ** TODO Write map of the remaning stations to log into
 https://meta.intra.42.fr/clusters
