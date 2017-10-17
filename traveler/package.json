@@ -1,0 +1,18 @@
+{
+  "name": "traveler",
+  "version": "0.1.0",
+  "description": "* Traveler A set of scripts to unlock the achievement ~Mighty Traveler~.",
+  "main": ".#autodelog.js",
+  "dependencies": {
+    "form-data": "^2.3.1",
+    "fs": "^0.0.1-security",
+    "got": "^7.1.0",
+    "js-yaml": "^3.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
