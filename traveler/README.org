@@ -2,7 +2,7 @@
 
 * Traveler
 A set of scripts to unlock the achievement ~Mighty Traveler~.
-[[file:achivevement.svg][Mighty Traveler achievement]]
+[[file:achivevement.png][Mighty Traveler achievement]]
 
 ** TODO Write map of the remaning stations to log into
 https://meta.intra.42.fr/clusters
@@ -33,7 +33,26 @@ https://meta.intra.42.fr/clusters
 CLOSED: [2017-10-16 Mon 15:35]
 ** TODO Write service which log yourself out when the DB had notice you are connected to the current station  
 
+** Requirement
+
+** s
+- =platformio=
+- =node=
+
+** Setup
 Compile the firmware for the =autologin= key:
 #+BEGIN_SRC sh
 platformio run -t upload -d ./autologin
+#+END_SRC
+
+Setup the =autodelog= daemon:
+#+BEGIN_SRC sh
+  npm install
+  mkdir -p "${HOME}/.local/bin"
+  ln -sf "$(pwd)autodelog.js" "${HOME}/.local/bin/"
+  mkdir -p "${HOME}/Library/LaunchAgents/"
+  ln -sf "$(pwd)/autodelog.plist" "${HOME}/Library/LaunchAgents/"
+  sed -i '' "s|\$HOME|$HOME|" "${HOME}/Library/LaunchAgents/autodelog.plist"
+  launchctl load "${HOME}/Library/LaunchAgents/autodelog.plist"
+  launchctl start autodelog.plist
 #+END_SRC
