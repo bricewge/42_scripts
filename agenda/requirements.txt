@@ -2,7 +2,7 @@ backports.ssl==0.0.9
 -e git+git@github.com:bricewge/42-agenda.git@9e13622a94b78e1ec7581e2f4267933330717eec#egg=caldav&subdirectory=venv/src/caldav
 cffi==1.9.1
 coverage==4.3.1
-cryptography==1.7.1
+cryptography==3.2
 enum34==1.1.6
 funcsigs==1.0.2
 idna==2.2
